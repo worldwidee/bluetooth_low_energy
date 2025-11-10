@@ -124,6 +124,16 @@ extension MyAdvertisementArgs {
             let serviceUUIDs = serviceUUIDsArgs.map { serviceUUIDArgs in serviceUUIDArgs!.toCBUUID() }
             advertisement[CBAdvertisementDataServiceUUIDsKey] = serviceUUIDs
         }
+        if !serviceDataArgs.isEmpty {
+            var serviceData = [CBUUID: Data]()
+            // serviceDataArgs'ın tipi: [String?: FlutterStandardTypedData?] [cite: 1818]
+            for (uuidArgs, dataArgs) in serviceDataArgs {
+                if let uuid = uuidArgs?.toCBUUID(), let data = dataArgs?.data {
+                    serviceData[uuid] = data
+                }
+            }
+            advertisement[CBAdvertisementDataServiceDataKey] = serviceData
+        }
         return advertisement
     }
 }
