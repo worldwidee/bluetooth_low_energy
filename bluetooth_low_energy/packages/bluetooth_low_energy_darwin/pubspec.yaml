@@ -13,12 +13,12 @@ environment:
   # Flutter versions prior to 3.7 did not support the
   # sharedDarwinSource option.
   flutter: ">=3.7.0"
-resolution: workspace
 
 dependencies:
   flutter:
     sdk: flutter
-  bluetooth_low_energy_platform_interface: ^6.1.0
+  bluetooth_low_energy_platform_interface:
+    git: https://github.com/worldwidee/bluetooth_low_energy_platform_interface.git
 
 dev_dependencies:
   flutter_test:

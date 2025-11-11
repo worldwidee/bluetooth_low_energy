@@ -16,11 +16,12 @@ resolution: workspace
 dependencies:
   flutter:
     sdk: flutter
-  bluetooth_low_energy_platform_interface: ^6.1.0
-  bluetooth_low_energy_android: ^6.1.0
-  bluetooth_low_energy_darwin: ^6.1.0
-  bluetooth_low_energy_windows: ^6.1.0
-  bluetooth_low_energy_linux: ^6.1.0
+  bluetooth_low_energy_platform_interface:
+    git: https://github.com/worldwidee/bluetooth_low_energy_platform_interface.git
+  bluetooth_low_energy_android:
+    path: packages/bluetooth_low_energy_android
+  bluetooth_low_energy_darwin:
+    path: packages/bluetooth_low_energy_darwin
 
 dev_dependencies:
   flutter_test:
@@ -36,7 +37,3 @@ flutter:
         default_package: bluetooth_low_energy_darwin
       macos:
         default_package: bluetooth_low_energy_darwin
-      windows:
-        default_package: bluetooth_low_energy_windows
-      linux:
-        default_package: bluetooth_low_energy_linux

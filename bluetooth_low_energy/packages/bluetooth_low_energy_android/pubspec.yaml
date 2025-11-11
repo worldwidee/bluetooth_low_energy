@@ -1,5 +1,5 @@
-name: bluetooth_low_energy_windows
-description: "Windows implementation of the bluetooth_low_energy plugin."
+name: bluetooth_low_energy_android
+description: "Android implementation of the bluetooth_low_energy plugin."
 version: 6.1.0
 repository: https://github.com/worldwidee/bluetooth_low_energy
 issue_tracker: https://github.com/worldwidee/bluetooth_low_energy/issues
@@ -11,12 +11,13 @@ topics:
 environment:
   sdk: ^3.6.2
   flutter: ">=3.3.0"
-resolution: workspace
 
 dependencies:
   flutter:
     sdk: flutter
-  bluetooth_low_energy_platform_interface: ^6.1.0
+  bluetooth_low_energy_platform_interface:
+    git: https://github.com/worldwidee/bluetooth_low_energy_platform_interface.git
+  collection: ^1.18.0
 
 dev_dependencies:
   flutter_test:
@@ -28,6 +29,7 @@ flutter:
   plugin:
     implements: bluetooth_low_energy
     platforms:
-      windows:
-        pluginClass: BluetoothLowEnergyWindowsPluginCApi
-        dartPluginClass: BluetoothLowEnergyWindowsPlugin
+      android:
+        package: dev.zeekr.bluetooth_low_energy_android
+        pluginClass: BluetoothLowEnergyAndroidPlugin
+        dartPluginClass: BluetoothLowEnergyAndroidPlugin
